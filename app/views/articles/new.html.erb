@@ -1,0 +1,37 @@
+<%= render 'shared/header2' %>
+<%= form_with(model: @article, local: true) do |f| %>
+  <div class="img-upload">
+    <div class="weight-bold-text">
+    記事画像
+    <span class="indispensable">必須</span>
+  </div>
+  <div class="click-upload">
+    <p>
+      クリックしてファイルをアップロード
+    </p>
+  <%= f.file_field :image, id:"article-image" %>
+  </div> 
+</div>
+
+
+<div class="new-articles">
+  <div class="weight-bold-text">
+    記事名
+  <span class="indispensable">必須</span>
+  </div>
+  <%= f.text_area :title, class:"article-text", id:"article-name", placeholder:"記事名（必須 20文字まで)", maxlength:"20" %>
+    <div class="article-explain">
+      <div class="weight-bold-text">
+        記事内容
+      <span class="indispensable">必須</span>
+    </div>
+  <%= f.text_area :text, class:"article-text", id:"article-info", placeholder:"記事内容（必須 500文字まで）" ,rows:"7" ,maxlength:"500" %>
+  </div>
+</div>
+<div class="article-explain">
+  <div class="weight-bold-text">
+    記事についての参考文献
+  </div>
+  <%= f.text_area :book_name, class:"article-text", id:"article-info", placeholder:"記事についての参考文献" ,rows:"7" ,maxlength:"1000" %>
+</div>
+<% end %>
