@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    Article.create(article_params)
+    @article = Article.new(article_params)
     if @article.save
       redirect_to root_path
     else

@@ -6,4 +6,5 @@ class Article < ApplicationRecord
   validates :text,presence: true
   validates :title,presence: true
   validates :image,presence: true
+  validates :book_name,presence: true
 end
