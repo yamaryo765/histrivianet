@@ -1,15 +1,23 @@
 <%= render 'shared/header' %>
 
 <div class='kijiichiran'>記事一覧</div>
-<% @articles.each do |article| %>
-  <div class="card">
-  <header class="card-header">
-    <p class="card-header-title">
-    <%= article.title %>
-    </p>
-  </header>
-  <div class="card-content">
-  <%= article
-  </div>
+<div class="column">
+<div class="card ml-1 is-size-3 pt-6 ">
+  <% @articles.each do |article| %>
+
+    <header class="card-header">
+      <p class="card-header-title">
+      <%= article.title %>
+      </p>
+    </header>
+    <div class="card-content">
+      <%= article.text%>
+    </div>
+    <div class="card-image">
+      <%=image_tag article.image.url %>
+    </div>
+    <div class="card-content">
+      <%=article.book_name%>
+    </div> 
+  <% end %>
 </div>
-<% end %>
