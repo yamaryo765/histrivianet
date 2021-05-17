@@ -1,24 +1,55 @@
-# README
+### アプリケーション名
+historynet
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### 概要
+歴史に苦手意識を持つ学生や、歴史の面白さを知らない人向けの歴史雑学記事投稿アプリです。
+ユーザーを管理し記事の投稿、編集、削除が可能です
 
-Things you may want to cover:
+### URL
 
-* Ruby version
+### テスト用アカウント
 
-* System dependencies
+### 利用方法
 
-* Configuration
+### 目指した課題解決
 
-* Database creation
+### 洗い出した要件
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### 実装予定の機能
 
-* Deployment instructions
+### テーブル設計
 
-* ...
+## usersテーブル
+
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| name     | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
+| nickname | string | null: false |
+
+
+## articleテーブル
+
+| Column | Type       |    Options                         |
+| ------ | ---------- | ---------------------------------- |
+| title  | string     | null: false                        |
+| text   | text       | null: false                        |
+| user   | references | null: false, foreign_key: true     | 
+
+
+
+## messagesテーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | string     |                                |
+| user    | references | null: false, foreign_key: true |
+| article | references | null: false, foreign_key: true |
+
+
+### ローカルでの動作方法
+
+
